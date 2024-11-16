@@ -25,13 +25,13 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /src/*.deb
 
 nvelagapudi@fultonscienceacademy.org
-RUN useradd -u 1000)
+
 RUN useradd -u 1000 -m -d /home/chrome -G audio,video chrome && mkdir /home/chrome/Downloads && chown chrome /home/chrome/Downloads
 
 COPY local.conf /etc/fonts/local.conf
 
-docker build -t chrome .
+
 USER chrome
 
-bash run.sh
+
 ENTRYPOINT [ "google-chrome" ]
