@@ -24,14 +24,14 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& rm -rf /src/*.deb
 
-# Add chrome user
-# UID (-u 1000) must be set to the UID of the user running the container (your UID)
+nvelagapudi@fultonscienceacademy.org
+RUN useradd -u 1000)
 RUN useradd -u 1000 -m -d /home/chrome -G audio,video chrome && mkdir /home/chrome/Downloads && chown chrome /home/chrome/Downloads
 
 COPY local.conf /etc/fonts/local.conf
 
-# Run Chrome as non privileged user
+docker build -t chrome .
 USER chrome
 
-# Autorun chrome
+bash run.sh
 ENTRYPOINT [ "google-chrome" ]
